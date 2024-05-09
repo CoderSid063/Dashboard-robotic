@@ -1,14 +1,14 @@
 import Axios from "axios";
-import URL from "./utils/util.js";
+import URL from "../utils/util.js";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { dataActions } from "./store/dataSlice.js";
+import { dataActions } from "../store/dataSlice.js";
 
 const FetchApi = () => {
   const dispatch = useDispatch();
 
   const fetchData = async () => {
-    await Axios.get(URL)
+    await Axios.get(`${URL}/data`)
       .then(({ data }) => {
         console.log(data);
         dispatch(dataActions.addData(data));
@@ -21,7 +21,7 @@ const FetchApi = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  return <div>FetchApi</div>;
+  return <></>;
 };
 
 export default FetchApi;
