@@ -1,7 +1,7 @@
-const Data = require("../model/dataModel");
-const { ApiError } = require("../utils/ApiError");
-const { ApiResponse } = require("../utils/ApiResponse");
-const { asyncHandler } = require("../utils/AsyncHandler");
+const Data = require("../model/dataModel.js");
+const { ApiError } = require("../utils/ApiError.js");
+const { ApiResponse } = require("../utils/ApiResponse.js");
+const { asyncHandler } = require("../utils/AsyncHandler.js");
 
 const getData = asyncHandler(async (req, res) => {
   try {
