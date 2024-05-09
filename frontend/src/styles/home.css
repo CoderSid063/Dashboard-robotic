@@ -1,0 +1,18 @@
+.container{
+  max-width: 1600px;
+  height: 93%;
+  border: 2px solid black;
+  display: flex;
+  gap: 5px;
+}
+.sidebar{
+  width: 20%;
+  height: auto;
+  border: 1px solid blue;
+}
+
+.main{
+  width: 100%;
+  height: auto;
+  border: 1px solid red;
+}

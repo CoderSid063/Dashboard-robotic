@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../styles/login.css";
 import URL from "../utils/util";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/authSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -40,8 +43,9 @@ const Login = () => {
       });
       if (response.status === 200) {
         const responseData = await response.json();
-
         console.log(responseData);
+
+        dispatch(authActions.setTokens());
 
         // Reset form after submission
         setLoginFormData({

@@ -10,7 +10,7 @@ const FetchApi = () => {
   const fetchData = async () => {
     await Axios.get(`${URL}/data`)
       .then(({ data }) => {
-        console.log(data);
+        // console.log(data);
         dispatch(dataActions.addData(data));
       })
       .catch((error) => {
